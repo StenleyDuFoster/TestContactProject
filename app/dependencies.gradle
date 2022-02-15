@@ -1,10 +1,36 @@
-
 dependencies {
 
     implementation deps.kotlin.kotlinCore
+    implementation deps.kotlin.reflect
     implementation deps.appcompat.core
     implementation deps.material.core
     implementation deps.constraint.core
+
+    implementation deps.coil
+    implementation deps.recyclerView
+    implementation deps.serilization
+
+    implementation deps.hilt.android
+    implementation deps.hilt.navigation
+    implementation deps.hilt.workManager
+    kapt deps.hilt.workManagerKapt
+    kapt deps.hilt.kapt
+
+    implementation deps.ktor.core
+    implementation deps.ktor.android
+    implementation deps.ktor.json
+    implementation deps.ktor.serialization
+
+    implementation deps.paging.core
+
+    implementation deps.room.core
+    kapt deps.room.kapt
+    implementation deps.room.paging
+    testImplementation deps.room.test
+
+    implementation deps.workManager.core
+    androidTestImplementation deps.workManager.test
+
     testImplementation deps.testInstrumental.junit
     androidTestImplementation deps.testAndroid.junitExt
     androidTestImplementation deps.testAndroid.espressoCore

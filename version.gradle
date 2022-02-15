@@ -1,12 +1,24 @@
 def versions = [:]
 
 versions.kotlin = "1.7.0"
+versions.kotlinPlagin = "1.6.0"
 versions.appcompat = "1.4.1"
 versions.material = "1.5.0"
 versions.constraintlayout = "2.1.3"
 versions.junit = "4.+"
 versions.junitExt = "1.1.3"
 versions.espresso = "3.4.0"
+versions.gradle = "7.0.4"
+versions.coil = "1.4.0"
+versions.recyclerView = "1.1.0"
+versions.serilization = "1.3.2"
+versions.hilt = "2.38.1"
+versions.hiltWorkManager = "1.0.0"
+versions.hiltNavigation = "1.0.0"
+versions.ktor = "1.6.7"
+versions.paging = "3.1.0"
+versions.room = "2.4.1"
+versions.workManager = "2.7.1"
 
 def deps = [:]
 
@@ -16,11 +28,36 @@ def material = [:]
 def constraint = [:]
 def testInstrumental = [:]
 def testAndroid = [:]
+def hilt = [:]
+def ktor = [:]
+def paging = [:]
+def room = [:]
+def workManager = [:]
 
 kotlin.kotlinCore = "androidx.core:core-ktx:$versions.kotlin"
+kotlin.reflect = "org.jetbrains.kotlin:kotlin-reflect:$versions.kotlinPlagin"
 appcompat.core = "androidx.appcompat:appcompat:$versions.appcompat"
 material.core = "com.google.android.material:material:$versions.material"
 constraint.core = "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
+deps.coil = "io.coil-kt:coil:$versions.coil"
+deps.recyclerView = "androidx.recyclerview:recyclerview:$versions.recyclerView"
+deps.serilization = "org.jetbrains.kotlinx:kotlinx-serialization-json:$versions.serilization"
+hilt.android = "com.google.dagger:hilt-android:$versions.hilt"
+hilt.kapt = "com.google.dagger:hilt-android-compiler:$versions.hilt"
+hilt.navigation = "androidx.hilt:hilt-navigation-fragment:$versions.hiltNavigation"
+hilt.workManager = "androidx.hilt:hilt-work:$versions.hiltWorkManager"
+hilt.workManagerKapt = "androidx.hilt:hilt-compiler:$versions.hiltWorkManager"
+ktor.core = "io.ktor:ktor-client-core:$versions.ktor"
+ktor.android = "io.ktor:ktor-client-android:$versions.ktor"
+ktor.json = "io.ktor:ktor-client-json-jvm:$versions.ktor"
+ktor.serialization = "io.ktor:ktor-client-gson:$versions.ktor"
+paging.core = "androidx.paging:paging-runtime:$versions.paging"
+room.core = "androidx.room:room-runtime:$versions.room"
+room.paging = "androidx.room:room-paging:$versions.room"
+room.kapt = "androidx.room:room-compiler:$versions.room"
+room.test = "androidx.room:room-testing:$versions.room"
+workManager.core = "androidx.work:work-runtime-ktx:$versions.workManager"
+workManager.test = "androidx.work:work-testing:$versions.workManager"
 
 testInstrumental.junit = "junit:junit:$versions.junit"
 testAndroid.junitExt = "androidx.test.ext:junit:$versions.junitExt"
@@ -32,6 +69,18 @@ deps.material = material
 deps.constraint = constraint
 deps.testInstrumental = testInstrumental
 deps.testAndroid = testAndroid
+deps.hilt = hilt
+deps.ktor = ktor
+deps.paging = paging
+deps.room = room
+deps.workManager = workManager
+
+def plugin = [:]
+
+plugin.kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlinPlagin"
+plugin.gradle = "com.android.tools.build:gradle:$versions.gradle"
+plugin.hilt = "com.google.dagger:hilt-android-gradle-plugin:$versions.hilt"
 
 ext.versions = versions
 ext.deps = deps
+ext.plugin = plugin
