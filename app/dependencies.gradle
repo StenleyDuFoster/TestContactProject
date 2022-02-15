@@ -1,0 +1,12 @@
+
+dependencies {
+
+    implementation deps.kotlin.kotlinCore
+    implementation deps.appcompat.core
+    implementation deps.material.core
+    implementation deps.constraint.core
+    testImplementation deps.testInstrumental.junit
+    androidTestImplementation deps.testAndroid.junitExt
+    androidTestImplementation deps.testAndroid.espressoCore
+
+}

@@ -1,0 +1,37 @@
+def versions = [:]
+
+versions.kotlin = "1.7.0"
+versions.appcompat = "1.4.1"
+versions.material = "1.5.0"
+versions.constraintlayout = "2.1.3"
+versions.junit = "4.+"
+versions.junitExt = "1.1.3"
+versions.espresso = "3.4.0"
+
+def deps = [:]
+
+def kotlin = [:]
+def appcompat = [:]
+def material = [:]
+def constraint = [:]
+def testInstrumental = [:]
+def testAndroid = [:]
+
+kotlin.kotlinCore = "androidx.core:core-ktx:$versions.kotlin"
+appcompat.core = "androidx.appcompat:appcompat:$versions.appcompat"
+material.core = "com.google.android.material:material:$versions.material"
+constraint.core = "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
+
+testInstrumental.junit = "junit:junit:$versions.junit"
+testAndroid.junitExt = "androidx.test.ext:junit:$versions.junitExt"
+testAndroid.espressoCore = "androidx.test.espresso:espresso-core:$versions.espresso"
+
+deps.kotlin = kotlin
+deps.appcompat = appcompat
+deps.material = material
+deps.constraint = constraint
+deps.testInstrumental = testInstrumental
+deps.testAndroid = testAndroid
+
+ext.versions = versions
+ext.deps = deps
