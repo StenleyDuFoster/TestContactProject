@@ -24,6 +24,7 @@ dependencies {
     implementation deps.paging.core
 
     implementation deps.room.core
+    implementation deps.room.kotlin
     kapt deps.room.kapt
     implementation deps.room.paging
     testImplementation deps.room.test

@@ -15,8 +15,6 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
 
     override val layoutId = R.layout.activity_main
 
-    @Inject
-    lateinit var contactRepository: ContactRepository
     private val fragmentController = FragmentController()
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -4,12 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.stenleone.testcontactproject.core.BaseListAdapter
+import com.stenleone.testcontactproject.core.BasePagingAdapterAdapter
 import com.stenleone.testcontactproject.core.RecyclerBinder
 import com.stenleone.testcontactproject.databinding.ItemContactBinding
 import com.stenleone.testcontactproject.domain.entity.ContactEntity
 import com.stenleone.testcontactproject.util.diff.ContactDiffItemCallback
 
-class ContactAdapter : BaseListAdapter<ContactEntity, ContactAdapter.ContactHolder>(ContactDiffItemCallback()) {
+class ContactAdapter : BasePagingAdapterAdapter<ContactEntity, ContactAdapter.ContactHolder>(ContactDiffItemCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactHolder =
         ContactHolder(ItemContactBinding.inflate(LayoutInflater.from(parent.context), parent, false))
@@ -18,12 +19,12 @@ class ContactAdapter : BaseListAdapter<ContactEntity, ContactAdapter.ContactHold
 
         init {
             binding.rootCard.throttleClicks {
-                clickListener.invoke(currentList[bindingAdapterPosition])
+                getItem(bindingAdapterPosition)?.let { clickListener.invoke(it) }
             }
         }
 
         override fun bind() {
-            binding.contact = currentList[bindingAdapterPosition]
+            binding.contact = getItem(bindingAdapterPosition)
         }
 
     }

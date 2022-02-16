@@ -3,10 +3,12 @@ package com.stenleone.testcontactproject.ui.list
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.stenleone.testcontactproject.R
 import com.stenleone.testcontactproject.core.BaseBindingFragment
 import com.stenleone.testcontactproject.databinding.FragmentListContactBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class ContactListFragment : BaseBindingFragment<FragmentListContactBinding>() {
@@ -24,7 +26,9 @@ class ContactListFragment : BaseBindingFragment<FragmentListContactBinding>() {
 
     private fun setupViewModel() {
         viewModel.contacts.observeNotNull {
-            contactsAdapter.submitList(it)
+            lifecycleScope.launch {
+                contactsAdapter.submitData(it)
+            }
         }
     }
 

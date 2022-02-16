@@ -7,8 +7,9 @@ import javax.inject.Inject
 
 class ContactsApi @Inject constructor(private val client: HttpClient) {
 
-    suspend fun getContacts() = client.get<HttpResponse>(NetworkUrl.CONTACTS.url) {
-
+    suspend fun getContacts(page: Int) = client.get<HttpResponse>(NetworkUrl.CONTACTS.url) {
+        parameter("page", page)
+        parameter("limit", 10)
     }
 
 }
