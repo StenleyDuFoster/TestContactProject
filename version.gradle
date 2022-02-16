@@ -50,7 +50,7 @@ hilt.workManagerKapt = "androidx.hilt:hilt-compiler:$versions.hiltWorkManager"
 ktor.core = "io.ktor:ktor-client-core:$versions.ktor"
 ktor.android = "io.ktor:ktor-client-android:$versions.ktor"
 ktor.json = "io.ktor:ktor-client-json-jvm:$versions.ktor"
-ktor.serialization = "io.ktor:ktor-client-gson:$versions.ktor"
+ktor.serialization = "io.ktor:ktor-client-serialization-jvm:$versions.ktor"
 paging.core = "androidx.paging:paging-runtime:$versions.paging"
 room.core = "androidx.room:room-runtime:$versions.room"
 room.paging = "androidx.room:room-paging:$versions.room"
@@ -80,6 +80,7 @@ def plugin = [:]
 plugin.kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlinPlagin"
 plugin.gradle = "com.android.tools.build:gradle:$versions.gradle"
 plugin.hilt = "com.google.dagger:hilt-android-gradle-plugin:$versions.hilt"
+plugin.serialization = "org.jetbrains.kotlin:kotlin-serialization:$versions.kotlinPlagin"
 
 ext.versions = versions
 ext.deps = deps

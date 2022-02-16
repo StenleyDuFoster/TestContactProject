@@ -28,6 +28,14 @@
             android:authorities="${applicationId}.workmanager-init"
             tools:node="remove" />
 
+        <receiver android:name=".util.exception.ConnectivityManager"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

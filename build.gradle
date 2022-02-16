@@ -9,6 +9,7 @@ buildscript {
         classpath plugin.kotlin
         classpath plugin.gradle
         classpath plugin.hilt
+        classpath plugin.serialization
     }
 }
 

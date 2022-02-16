@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BaseCard">
+        <item name="cardCornerRadius">@dimen/size_8</item>
+        <item name="cardElevation">@dimen/size_4</item>
+        <item name="cardBackgroundColor">@color/white</item>
+    </style>
+
+    <style name="BaseText">
+        <item name="fontFamily">sans-serif</item>
+        <item name="android:textSize">@dimen/size_12</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TitleText">
+        <item name="fontFamily">sans-serif-black</item>
+        <item name="android:textSize">@dimen/size_16</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="BaseSingleText" parent="BaseText">
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="TitleSingleText" parent="TitleText">
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+</resources>

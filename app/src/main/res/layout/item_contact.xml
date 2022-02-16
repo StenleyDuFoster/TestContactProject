@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="contact"
+            type="com.stenleone.testcontactproject.domain.entity.ContactEntity" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/rootCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size_8"
+        android:layout_marginBottom="@dimen/size_8"
+        android:theme="@style/BaseCard">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/companyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/size_8"
+                android:text="@{contact.companyName}"
+                android:theme="@style/TitleSingleText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Company name" />
+
+            <TextView
+                android:id="@+id/departmentText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/size_8"
+                android:text="@{contact.department}"
+                android:theme="@style/BaseSingleText"
+                app:layout_constraintBottom_toBottomOf="@+id/companyText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toEndOf="@+id/companyText"
+                app:layout_constraintTop_toTopOf="@+id/companyText"
+                tools:text="department" />
+
+            <TextView
+                android:id="@+id/nameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_16"
+                android:text="@{@string/name + `:`}"
+                android:theme="@style/BaseSingleText"
+                app:layout_constraintStart_toStartOf="@+id/companyText"
+                app:layout_constraintTop_toBottomOf="@+id/companyText"
+                tools:text="Name: " />
+
+            <TextView
+                android:id="@+id/nameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_8"
+                android:layout_marginTop="@dimen/size_16"
+                android:text="@{contact.name}"
+                android:theme="@style/BaseSingleText"
+                app:layout_constraintStart_toEndOf="@+id/nameLabel"
+                app:layout_constraintTop_toBottomOf="@+id/companyText"
+                tools:text="Name" />
+
+            <TextView
+                android:id="@+id/emailLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_16"
+                android:text="@{@string/email + `:`}"
+                android:theme="@style/BaseSingleText"
+                app:layout_constraintStart_toStartOf="@+id/nameLabel"
+                app:layout_constraintTop_toBottomOf="@+id/nameLabel"
+                tools:text="Email: " />
+
+            <TextView
+                android:id="@+id/emailText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_8"
+                android:text="@{contact.email}"
+                android:theme="@style/BaseSingleText"
+                app:layout_constraintBottom_toBottomOf="@+id/emailLabel"
+                app:layout_constraintStart_toEndOf="@+id/emailLabel"
+                app:layout_constraintTop_toTopOf="@+id/emailLabel"
+                tools:text="Email" />
+
+            <TextView
+                android:id="@+id/surnameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_16"
+                android:text="@{@string/surname + `:`}"
+                android:theme="@style/BaseSingleText"
+                app:layout_constraintStart_toStartOf="@+id/companyText"
+                app:layout_constraintTop_toBottomOf="@+id/emailText"
+                tools:text="Surname: " />
+
+            <TextView
+                android:id="@+id/surnameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_8"
+                android:text="@{contact.surname}"
+                android:theme="@style/BaseSingleText"
+                app:layout_constraintStart_toEndOf="@+id/surnameLabel"
+                app:layout_constraintTop_toTopOf="@+id/surnameLabel"
+                tools:text="Surname" />
+
+            <TextView
+                android:id="@+id/numberLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_16"
+                android:layout_marginBottom="@dimen/size_16"
+                android:text="@{@string/number + `:`}"
+                android:theme="@style/BaseSingleText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/nameLabel"
+                app:layout_constraintTop_toBottomOf="@+id/surnameLabel"
+                tools:text="Number: " />
+
+            <TextView
+                android:id="@+id/numberText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_8"
+                android:text="@{String.valueOf(contact.number)}"
+                android:theme="@style/BaseSingleText"
+                app:layout_constraintBottom_toBottomOf="@+id/numberLabel"
+                app:layout_constraintStart_toEndOf="@+id/numberLabel"
+                app:layout_constraintTop_toTopOf="@+id/numberLabel"
+                tools:text="+380535333" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
